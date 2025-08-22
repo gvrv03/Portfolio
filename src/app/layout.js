@@ -10,17 +10,17 @@ export const metadata = {
     title: "Gaurav Narnaware | Full Stack Developer",
     description:
       "I'm a full stack developer with a passion for building scalable and efficient web applications.",
-    images: "/Profile.webp",
+    images: "/Profile.png",
   },
   icons: {
-    icon: "/Profile.webp",
+    icon: "/Profile.png",
   },
   twitter: {
     card: "Gaurav Narnaware",
     title: "Gaurav Narnaware | Full Stack Developer",
     description:
       "I'm a full stack developer with a passion for building scalable and efficient web applications.",
-    images: "/Profile.webp",
+    images: "/Profile.png",
   },
 };
 export default function RootLayout({ children }) {

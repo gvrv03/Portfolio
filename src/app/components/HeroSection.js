@@ -23,7 +23,7 @@ const HeroSection = () => {
         </div>
         <div className=" border-dashed border  p-2  rounded-full  ">
           <Image
-            src="/Profile.webp"
+            src="/Profile.png"
             width={200}
             height={200}
             className="  rounded-full"
