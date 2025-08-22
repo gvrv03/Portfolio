@@ -21,7 +21,7 @@ export default function HomeWithSkeleton() {
     return (
       <div className=" space-y-6 animate-pulse">
         {/* Hero Section */}
-        <div className="flex justify-between items-center p-6 border border-gray-800 rounded-lg bg-black">
+        <div className="flex justify-between items-center p-2 border border-gray-800 rounded-lg bg-black">
           <div className="space-y-4 w-2/3">
             <div className="h-6 w-40 bg-gray-800 rounded"></div>
             <div className="h-4 w-56 bg-gray-800 rounded"></div>
@@ -35,7 +35,7 @@ export default function HomeWithSkeleton() {
         </div>
 
         {/* Academics */}
-        <div className="p-6 border border-gray-800 rounded-lg bg-black space-y-4">
+        <div className="p-2 border border-gray-800 rounded-lg bg-black space-y-4">
           <div className="h-5 w-32 bg-gray-700 rounded"></div>
           <div className="flex justify-between items-center">
             <div className="h-4 w-60 bg-gray-800 rounded"></div>
@@ -48,7 +48,7 @@ export default function HomeWithSkeleton() {
         </div>
 
         {/* Skills */}
-        <div className="p-6 border border-gray-800 rounded-lg bg-black space-y-4">
+        <div className="p-2 border border-gray-800 rounded-lg bg-black space-y-4">
           <div className="h-5 w-40 bg-gray-700 rounded"></div>
           <div className="grid grid-cols-5 gap-3">
             {[...Array(10)].map((_, i) => (
@@ -58,7 +58,7 @@ export default function HomeWithSkeleton() {
         </div>
 
         {/* Professional Skills */}
-        <div className="p-6 border border-gray-800 rounded-lg bg-black space-y-4">
+        <div className="p-2 border border-gray-800 rounded-lg bg-black space-y-4">
           <div className="h-5 w-48 bg-gray-700 rounded"></div>
           <div className="space-y-3">
             {[...Array(3)].map((_, i) => (
