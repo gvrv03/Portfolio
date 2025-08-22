@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import FixedSocial from "./components/FixedSocial";
 
 export const metadata = {
   title: "Gaurav Narnaware | Full Stack Developer",
@@ -29,6 +29,7 @@ export default function RootLayout({ children }) {
       <body
         className={`bg-black md:border md:rounded-md md:border-gray-800  md:p-5 my-5 max-w-[800px] mx-auto p-5 text-white `}
       >
+        <FixedSocial />
         {children}
       </body>
     </html>
