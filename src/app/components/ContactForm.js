@@ -82,26 +82,14 @@ export function ContactForm() {
               <div className="w-3 h-3 bg-green-500 rounded-full"></div>
             </div>
             <div className="text-gray-400 text-sm font-mono">
-              📧 contact_protocol.sh
+              📧 contact_us.sh
             </div>
             <div className="w-16"></div>
           </div>
 
           {/* Terminal Content */}
           <div className="p-3 font-mono text-sm">
-            {/* Terminal Prompt */}
-            <div className="mb-6">
-              <div className="text-green-400 mb-2">
-                {">"} Ready for secure transmission
-              </div>
-              <div className="text-orange-400 mb-2">
-                <span className="text-orange-500">gaurav@portfolio</span> : ~
-              </div>
-              <div className="text-white mb-4">
-                $ fetch contact_form.protocol
-              </div>
-            </div>
-
+          
             {/* Contact Form */}
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Email Input */}
@@ -197,7 +185,7 @@ export function ContactForm() {
                   {isSubmitting ? (
                     <span className="flex items-center">
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-current mr-2"></div>
-                      TRANSMITTING...
+                      SENDING...
                     </span>
                   ) : (
                     "SEND MESSAGE"
@@ -211,39 +199,6 @@ export function ContactForm() {
             {responseMessage}
             </div>
 
-            {/* Status Indicators */}
-            <div className="mt-8 pt-6 border-t border-gray-700">
-              <div className="flex flex-wrap justify-center gap-6 text-xs">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-green-400 uppercase tracking-wider">
-                    ENCRYPTED CONNECTION
-                  </span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
-                  <span className="text-orange-400 uppercase tracking-wider">
-                    SECURE TRANSMISSION
-                  </span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                  <span className="text-blue-400 uppercase tracking-wider">
-                    RESPONSE GUARANTEED
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Terminal Footer */}
-            <div className="mt-6 text-gray-500 text-xs">
-              <div>Connection established to: gaurav.portfolio.dev</div>
-              <div>Protocol: HTTPS/2.0 | Encryption: AES-256</div>
-              <div className="mt-2">
-                <span className="text-green-400">●</span> Ready to receive
-                transmission
-              </div>
-            </div>
           </div>
         </div>
       </div>
