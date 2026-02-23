@@ -63,9 +63,22 @@ export const ProfessionalSKills = [
       "Experienced with version control using Git and collaboration on GitHub. Managed branching, pull requests, and code reviews. Automated workflows with GitHub Actions and maintained open-source contributions.",
     technologies: ["Git", "GitHub", "GitHub Actions", "CI/CD"],
   },
+  {
+    Name: "AI Automation (N8n)",
+    level: "78%",
+    Exp: "2024 - 2025",
+    logo: "/PSkills/N8n.png",
+    details:
+      "Built intelligent automation workflows using N8n to connect APIs, databases, and AI services. Designed no-code/low-code pipelines for lead generation, email automation, webhook handling, and AI-powered data processing using OpenAI integrations.",
+    technologies: [
+      "N8n",
+      "OpenAI API",
+      "Webhooks",
+      "REST APIs",
+      "Workflow Automation",
+    ],
+  },
 ];
-
-
 
 export const Education = [
   {
@@ -81,8 +94,6 @@ export const Education = [
     logo: "/GPA.jpg",
   },
 ];
-
-
 
 export const socialLinks = [
   {
@@ -237,8 +248,7 @@ export const projects = [
   },
   {
     title: "BrenzoMedia",
-    description:
-      "A Content Marketing Agency landing page",
+    description: "A Content Marketing Agency landing page",
     technologies: ["Next JS", "Tailwind CSS"],
     category: "Landing Page",
     repo: "",

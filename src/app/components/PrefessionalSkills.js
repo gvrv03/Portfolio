@@ -1,4 +1,33 @@
 import { Code } from "lucide-react";
+
+/* N8n brand logo as inline SVG — no external package needed */
+const N8nIcon = () => (
+  <svg
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-6 h-6"
+  >
+    <rect width="40" height="40" rx="8" fill="#EA4B71" />
+    <path
+      d="M10 20C10 14.477 14.477 10 20 10s10 4.477 10 10-4.477 10-10 10S10 25.523 10 20Z"
+      fill="white"
+      opacity="0.15"
+    />
+    <text
+      x="50%"
+      y="55%"
+      dominantBaseline="middle"
+      textAnchor="middle"
+      fontSize="13"
+      fontWeight="800"
+      fontFamily="Arial,sans-serif"
+      fill="white"
+    >
+      n8n
+    </text>
+  </svg>
+);
 import React from "react";
 import {
   FaReact,
@@ -65,6 +94,10 @@ const PrefessionalSkills = () => {
         { icon: <FaWordpress />, name: "WordPress" },
         { icon: <FaShopify />, name: "Shopify" },
       ],
+    },
+    {
+      category: "AI & Automation",
+      items: [{ icon: <N8nIcon />, name: "N8n" }],
     },
   ];
 
