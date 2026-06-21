@@ -1,13 +1,27 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { ExperienceSection } from "./components/ExperienceSection";
 import { EducationSection } from "./components/EducationSection";
 import { ContactForm } from "./components/ContactForm";
 import HeroSection from "./components/HeroSection";
 import PrefessionalSkills from "./components/PrefessionalSkills";
 import { Skills } from "./components/Skills";
+import Preloader from "./components/Preloader";
 
+// Reusable wrapper that fades & slides each section in on scroll
+function AnimatedSection({ children, delay = 0 }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export default function HomeWithSkeleton() {
   const [loading, setLoading] = useState(true);
@@ -19,6 +33,11 @@ export default function HomeWithSkeleton() {
 
   if (loading) {
     return (
+      <>
+        <AnimatePresence>
+          <Preloader label="Portfolio" />
+        </AnimatePresence>
+        {/* Skeleton kept underneath for layout continuity */}
       <div className=" space-y-6 animate-pulse">
         {/* Hero Section */}
         <div className="flex justify-between items-center p-2 border border-gray-800 rounded-lg bg-black">
@@ -69,19 +88,32 @@ export default function HomeWithSkeleton() {
             ))}
           </div>
         </div>
-      </div>
+        </div>
+      </>
     );
   }
 
   // When loading is done → show real website
   return (
     <>
-       <HeroSection />
-      <EducationSection />
-      <PrefessionalSkills />
-      <Skills />
-      <ExperienceSection />
-      <ContactForm />
+      <AnimatedSection>
+        <HeroSection />
+      </AnimatedSection>
+      <AnimatedSection delay={0.05}>
+        <EducationSection />
+      </AnimatedSection>
+      <AnimatedSection delay={0.1}>
+        <PrefessionalSkills />
+      </AnimatedSection>
+      <AnimatedSection delay={0.15}>
+        <Skills />
+      </AnimatedSection>
+      <AnimatedSection delay={0.2}>
+        <ExperienceSection />
+      </AnimatedSection>
+      <AnimatedSection delay={0.25}>
+        <ContactForm />
+      </AnimatedSection>
     </>
   );
 }

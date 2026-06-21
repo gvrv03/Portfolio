@@ -8,6 +8,24 @@ import {
 } from "lucide-react";
 export const experiences = [
   {
+    company: "Bhrraman",
+    role: "Full Stack Developer",
+    period: "Apr 2026 - Jun 2026",
+    logo: "/bhrraman.jpg",
+    details:
+      "Maintained and enhanced the Bhrraman travel website, improving performance, responsiveness, and user experience using Next.js and modern web technologies. Led the technical development of the Bhrraman Transfers web application, managing scalable architecture and feature implementation for global transfer booking services. Integrated APIs, optimized workflows, and implemented real-time functionalities to streamline booking and customer management processes.",
+    technologies: ["Next.js", "Node.js", "Express.js", "Redis", "Google API"],
+  },
+  {
+    company: "Brenzo Ai",
+    role: "Full Stack Developer",
+    period: "Mar 2026 - May 2026",
+    logo: "/BrenzoAi.png",
+    details:
+      "Developed and managed AI-powered WhatsApp automation workflows using n8n for lead handling, follow-ups, and customer engagement. Built and optimized chatbot automations for industries like travel, healthcare, and real estate to improve response time and lead conversion. Integrated AI chatbots with WhatsApp and CRM workflows to automate inquiries, appointment booking, and customer communication.",
+    technologies: ["n8n", "AI Chatbot", "WhatsApp API", "CRM", "Workflow Automation"],
+  },
+  {
     company: "Google Developer Group On Campus",
     role: "Development Lead",
     period: "2024 - 2025",
@@ -114,6 +132,46 @@ export const socialLinks = [
 ];
 export const projects = [
   {
+    title: "Bhrraman Transfers",
+    description:
+      "Scalable web application providing global transfer services, enabling users to book transportation across multiple locations worldwide. Integrates Google Maps API for location search, route optimization, and real-time directions.",
+    technologies: ["React.js", "Next.js", "Node.js", "Express.js", "Redis", "Google API"],
+    category: "Fullstack",
+    repo: "",
+    liveUrl: "https://transfers.bhrraman.in/",
+    image: "/Projects/FoundUs.png",
+  },
+  {
+    title: "Bhrraman Website (Travel Agency)",
+    description:
+      "Scalable travel agency website featuring AI-powered itinerary generation along with automated content creation for pages, blogs, and destination listings. Designed for high performance using server-side rendering (SSR) and optimized caching.",
+    technologies: ["React.js", "Next.js", "SSR", "Redis"],
+    category: "Fullstack",
+    repo: "",
+    liveUrl: "https://bhrraman.com/",
+    image: "/Projects/FoundUs.png",
+  },
+  {
+    title: "Real Estate AI Chatbot",
+    description:
+      "An AI-powered chatbot enabling users to discover properties based on requirements and book appointments automatically. Integrated Gemini API for natural language understanding and n8n for workflow automation, reducing manual inquiry handling by 70%.",
+    technologies: ["Next.js", "Tailwind CSS", "MongoDB", "n8n", "Gemini API"],
+    category: "Fullstack",
+    repo: "",
+    liveUrl: "",
+    image: "/Projects/FoundUs.png",
+  },
+  {
+    title: "BrenzoAI",
+    description:
+      "An AI-powered automation agency platform that helps travel, healthcare, and real-estate businesses automate lead generation, qualification, and follow-ups. Features AI WhatsApp & website chatbots, lead qualification, and follow-up automation to deliver instant responses and higher conversions.",
+    technologies: ["Next.js", "Tailwind CSS"],
+    category: "Landing Page",
+    repo: "",
+    liveUrl: "https://brenzoai.in/",
+    image: "/Projects/FoundUs.png",
+  },
+  {
     title: "Event Ease",
     description:
       "EventEase – A smart event planning platform to find managers, vendors, explore past events, and use AI to instantly generate event ideas.",
@@ -154,37 +212,6 @@ export const projects = [
     image: "/Projects/GDGPlatform.png",
   },
   {
-    title: "DSY College Finder",
-    description:
-      "An application for diploma students to find engineering colleges based on their eligibility criteria.",
-    technologies: ["React.js", "Node.js", "MongoDB"],
-    category: "Fullstack",
-    repo: "https://github.com/gvrv03/DSYConsultancy",
-    liveUrl: "https://dsyconsultancy.netlify.app/",
-    image: "/Projects/DSYConsultancy.png",
-  },
-
-  {
-    title: "Digital Product Store",
-    description:
-      "An application where admins can sell digital products, with payments handled via Razorpay API.",
-    technologies: ["React.js", "Node.js", "MongoDB", "Razorpay API"],
-    category: "Fullstack",
-    repo: "https://github.com/gvrv03/Wealth-Summit",
-    liveUrl: "https://wealth-summit.vercel.app/",
-    image: "/Projects/WealthSummit.png",
-  },
-  {
-    title: "Campus Plant Lens",
-    description:
-      "An application for plant management within a campus, featuring QR codes for plant identification.",
-    technologies: ["React.js", "Node.js", "MongoDB"],
-    category: "Fullstack",
-    repo: "https://github.com/gvrv03/CampusPlantLens",
-    liveUrl: "https://campusplantlens.netlify.app/",
-    image: "/Projects/CampusPlantLense.png",
-  },
-  {
     title: "AppforgeX Website",
     description:
       "A modern landing page designed for a startup, built with performance and UI optimization in mind.",
@@ -214,37 +241,6 @@ export const projects = [
     repo: "",
     liveUrl: "https://savalibahuddyeshiysansthanew.vercel.app/",
     image: "/Projects/Savali.png",
-  },
-
-  {
-    title: "Portfolio Website",
-    description:
-      "A portfolio website for a developer to showcase their projects and skills.",
-    technologies: ["Next.js", "Tailwind CSS"],
-    category: "Landing Page",
-    repo: "https://github.com/gvrv03/Gaurav-Professional-Portfolio",
-    liveUrl: "https://gvrvnew.vercel.app",
-    image: "/Projects/PortfolioLandingPage.png",
-  },
-  {
-    title: "Personal Blog App",
-    description:
-      "A blogging platform where only the admin can create and publish content, while users can save posts.",
-    technologies: ["React.js", "Node.js", "MongoDB", "Rich Text Editor"],
-    category: "Fullstack",
-    repo: "",
-    liveUrl: "",
-    image: "/Projects/BlogApp.png",
-  },
-  {
-    title: "Evently",
-    description:
-      "Evently – A smart event planning platform to vendors, explore past events",
-    technologies: ["React.js", "Node.js", "MongoDB", "Rich Text Editor"],
-    category: "Fullstack",
-    repo: "https://github.com/gvrv03/Evently",
-    liveUrl: "https://eventlynew.vercel.app",
-    image: "/Projects/BlogApp.png",
   },
   {
     title: "BrenzoMedia",

@@ -31,7 +31,7 @@ export function ExperienceSection() {
                     alt={exp?.company}
                     width={100}
                     height={100}
-                    className="w-[70%]"
+                    className=" rounded-full w-[90%]"
                   />
                 </div>
                 <div>

@@ -1,9 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/JSONData/DATAGVRV";
 import Link from "next/link";
 import { ArrowBigLeft } from "lucide-react";
+import Preloader from "@/app/components/Preloader";
 
 const ProjectShowcase = ()=> {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -25,65 +27,55 @@ const ProjectShowcase = ()=> {
       : projects.filter((p) => p.category === selectedCategory);
 
   return (
-    <section className="mb-16">
-      {/* Category Filter */}
-      <div className="flex flex-col p-2 sticky top-0 bg-black mb-6">
-        <h2 className="bg-black flex items-center gap-2 text-2xl font-bold text-white mb-5">
-          <Link href="/">
-            <ArrowBigLeft />
-          </Link>
-          Projects
-        </h2>
+    <>
+      {/* Preloader */}
+      <AnimatePresence>{loading && <Preloader label="Projects" />}</AnimatePresence>
 
-        <div className="flex gap-2 overflow-x-auto scrollbar-hide">
-          {loading
-            ? [...Array(4)].map((_, i) => (
-                <div
-                  key={i}
-                  className="w-20 h-8 rounded-full bg-gray-800 animate-pulse"
-                />
-              ))
-            : categories.map((cat, i) => (
-                <Button
-                  key={i}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-full text-sm transition ${
-                    selectedCategory === cat
-                      ? "bg-white text-black font-semibold"
-                      : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                  }`}
-                >
-                  {cat}
-                </Button>
-              ))}
-        </div>
-      </div>
+      <section className="mb-16">
+        {/* Category Filter */}
+        <div className="flex flex-col p-2 sticky top-0 z-10 bg-black mb-6">
+          <h2 className="bg-black flex items-center gap-2 text-2xl font-bold text-white mb-5">
+            <Link href="/">
+              <ArrowBigLeft />
+            </Link>
+            Projects
+          </h2>
 
-      {/* Project Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {loading
-          ? [...Array(4)].map((_, i) => (
-              <div
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+            {categories.map((cat, i) => (
+              <Button
                 key={i}
-                className="border border-gray-800 rounded-md p-4 shadow-md animate-pulse flex flex-col gap-4"
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-4 py-2 rounded-full text-sm transition ${
+                  selectedCategory === cat
+                    ? "bg-white text-black font-semibold"
+                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+                }`}
               >
-                <div className="h-5 w-2/3 bg-gray-700 rounded"></div>
-                <div className="h-3 w-full bg-gray-800 rounded"></div>
-                <div className="h-3 w-5/6 bg-gray-800 rounded"></div>
-                <div className="flex gap-2 mt-2">
-                  <div className="h-5 w-16 bg-gray-700 rounded-full"></div>
-                  <div className="h-5 w-20 bg-gray-700 rounded-full"></div>
-                </div>
-                <div className="flex gap-2 mt-4">
-                  <div className="h-7 w-20 bg-gray-800 rounded"></div>
-                  <div className="h-7 w-20 bg-gray-800 rounded"></div>
-                </div>
-              </div>
-            ))
-          : filteredProjects.map((project, index) => (
-              <div
-                key={index}
-                className="border flex w-full border-gray-800 rounded-md overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                {cat}
+              </Button>
+            ))}
+          </div>
+        </div>
+
+        {/* Project Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                layout
+                key={project.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.5,
+                  delay: (index % 2) * 0.1,
+                  ease: "easeOut",
+                }}
+                whileHover={{ y: -6 }}
+                className="border flex w-full border-gray-800 rounded-md overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group"
               >
                 {/* Project Details */}
                 <div className="p-4 flex-col justify-between w-full flex gap-3">
@@ -130,10 +122,12 @@ const ProjectShowcase = ()=> {
                     )}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-      </div>
-    </section>
+          </AnimatePresence>
+        </div>
+      </section>
+    </>
   );
 }
 
